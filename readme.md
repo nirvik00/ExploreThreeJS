@@ -1,7 +1,7 @@
 <h1>Exploring Three.JS</h1>
 <h4>This repo accompanies the youtube playlist: </h4>
 <h3> <a href=""> </a> </h3>
-<h4>will help learn and understand Three JS.</h4>
+<h4>The objective is to help develop skills for creative coding using Three JS.</h4>
 <h5>To get started, you need:</h5>
 <ul>
 <li>
