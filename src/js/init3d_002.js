@@ -49,6 +49,5 @@ function infiniteLoop()
 
 function render()
 {
-    /// last or at the end
     renderer.render(scene, camera);
 }
