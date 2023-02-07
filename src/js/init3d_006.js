@@ -1,3 +1,9 @@
+//
+//
+// light shadow curve
+//
+//
+//
 import * as THREE from 'three'
 import { PCFShadowMap } from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
@@ -98,6 +104,7 @@ function generate(w,h,d){
     let x=h/10;
     let i=-n;
     while(i<n){
+        let crvpts=[];
         let j=-n;
         while(j<n){
             let a=[i,j];
@@ -107,12 +114,19 @@ function generate(w,h,d){
             quads.push([a,b,c,d]);
             let z = Math.sin(i*w/10) + Math.cos(j*h/10)+2;
             zmax.push(z);
+            let p = new THREE.Vector3(i, j, z)
+            crvpts.push(p);
             j++;
         }
+        var crv = new THREE.CatmullRomCurve3(crvpts);
+        var geo = new THREE.TubeGeometry(crv, 200, 0.1, 12, false);
+        var mat=new THREE.MeshPhongMaterial({
+            color:new THREE.Color(0x0000ff)
+        })
+        var mesh = new THREE.Mesh(geo, mat);
+        meshArr.push(mesh);
         i++;
-    }
-
-   
+    }   
 
     quads.forEach((e, i) => {
         let shape = new THREE.Shape();
@@ -137,7 +151,7 @@ function generate(w,h,d){
         });
 
         let me= new THREE.Mesh(g,m);
-        meshArr.push(me);
+       //  meshArr.push(me);
     })
 
 }
