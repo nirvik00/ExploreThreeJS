@@ -14,7 +14,7 @@
 
 <h4>After clone/download-extract</h4>
 <ul>
-    <li>goto root and run: npm install .</li>
-    <li>to serve: npx parcel ./src/index.html</li>
-    <li>on browser, http://localhost:1234 (or whatever port parcel app uses on your computer)</li>
+    <li>goto root and run: <b>npm install .</b></li>
+    <li>to serve: <b>npx parcel ./src/index.html</b></li>
+    <li>on browser, <b>http://localhost:1234<b> (or whatever port parcel app uses on your computer)</li>
 </ul>
